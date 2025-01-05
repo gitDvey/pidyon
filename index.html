@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+	<!-- Bootstrap CSS -->
+	<meta charset="utf-8">
+	<title>שיעור פדיון הבן</title>
+	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.rtl.min.css"
+		integrity="sha384-LPvXVVAlyPoBSGkX8UddpctDks+1P4HG8MhT7/YwqHtJ40bstjzCqjj+VVVDhsCo" crossorigin="anonymous">
+
+	<style>
+	body{
+	padding: 40px;
+	}
+	.container {
+			
+			background-color: white;
+		}
+		
+		.row {
+
+			
+			padding: 0px 20px 20px 20px;
+
+		}
+	
+		.header{
+		padding: 40px;
+		border-bottom: 3px #515e66 solid;}
+		
+		.prices{
+		background-color: #98aab4; /*#98aab4;*/
+		padding: 20px;
+		}
+		
+		.logo{
+		float: right;
+		margin-left:20px;
+    width:120px;
+    height:170px;
+		}
+		
+		.main{
+		text-align: center;}
+		
+		.shita{
+		padding: 20px;
+		
+		}
+		
+		.shita-inner{
+		padding: 20px;
+		background-color: #f1f5f6;
+		}
+		
+		.about{
+		margin-top: 20px;
+		margin-bottom: 0px;
+		}
+		.gold{
+		color:#a08222;
+		}
+		.machazit
+		{
+			margin-right:25px;
+		}
+		.small
+		{
+		font-size:15px;
+		}
+		
+		.flex-container {
+		  display: flex;
+		  padding:10px;
+		}
+
+		.flex-container > div {
+		  flex-basis: 100%;
+		  text-align: center;
+		 
+		}
+		.flex-container  img {
+		 height:200px;
+		 border-radius: 9px 0px 9px 0px;
+		 border: 1px solid black;
+		}
+		
+			
+	</style>
+
+</head>
+
+<body>
+
+	<!--
+<div id='loading' class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden"></span>
+  </div>
+</div>-->
+
+	<div class="container">
+
+		<div class='row header'>
+		<div class="col-7">
+			<img src="logo.jpg" alt="hadrey kodesh" class="logo"/>
+			<p class="about">
+				הקובץ נערך ע"י מערכת 'הדרי קודש' <br>מכון כתבי הגאון רבי הדר יהודה מרגולין שליט"א</p>
+				<p class='small'>
+				לפניות בכל נושא: 
+				<a href="mailto:margolinsefer@gmail.com">margolinsefer@gmail.com</a>
+				או במספר 054-8443243 </p>
+		
+			</div>
+			
+			<div class='col-5 prices'>
+			<h5>שער הדולר <span id="NIS"></span><span>
+						ש"ח </span></h5><br>
+				<h5>מחיר אונקיית כסף בדולרים <span id="usdRate"></span><span> דולר </span></h5><br>
+				<h5>מחיר גרם כסף בשקלים <span id="silverGrams"></span><span> ש"ח </span></h5>
+
+</div>
+		</div>
+<div class="flex-container ">
+  <div><a href="../files/seder.pdf"><img src="../images/seder.jpg"></img></a></div>
+  <div><a href="../files/dofen.pdf"><img src="../images/dofen.jpg"></img></a></div>
+  <div><a href="../files/ozar.pdf"><img src="../images/ozar.jpg"></img></a></div>
+  <div><a href="../files/chala.pdf"><img src="../images/chala.jpg"></img></a></div>
+
+  
+</div>
+<div class='row main'>
+<p>הנתונים מתעדכנים אוטומטית בעת פתיחת האתר, עדכון אחרון: <span id="currentDate"></span></p>
+	<h1 class='gold'>שיעור פדיון הבן</h1>
+	
+	<h5>לפי מנהג העולם משערים ב-100 גרם כסף</h5>
+				<h2><label id="todayTotal"></label>&nbsp;ש"ח</h2>
+				<div>
+					<div>מחיר הכסף <label id="today"></label> ש"ח</div>
+
+					<div>תוספת 17% מע"מ <label id="todayMaam"></label> ש"ח</div>
+					<div>תוספת 21% למחיר קמעונאי <label id="todayKimonai"></label> ש"ח</div>
+					<!-- <label id="todayTotal"></label> -->
+</div>
+
+				</div>
+				<div class='row main'>
+				<div class="col-4 shita nae">
+				<div class="shita-inner">
+					<h5>שיטת הגר&quot;ח נאה 96 גרם</h5>
+
+					<h5> <label id="naeTotal"></label> ש"ח</h5>
+						<div>
+							מחיר הכסף <label id="nae"></label> ש"ח
+
+						</div>
+						<div> תוספת 17% מע&quot;מ <label id="naeMaam"></label> ש"ח</div>
+						<div>תוספת מחיר קמעונאי <label id="naeKimonai"></label> ש"ח</div>
+				</div>
+				</div>
+				<div class='col-4 shita sfarad'>
+				<div class="shita-inner">
+				<h5>שיטת ארצות ספרד 85 גרם</h5>
+					<h5> <label id="sfaTotal"></label> ש"ח</h5>
+						<div>
+							מחיר הכסף <label id="sfa"></label> ש"ח
+
+						</div>
+						<div> תוספת 17% מע&quot;מ <label id="sfaMaam"></label> ש"ח</div>
+						<div>תוספת מחיר קמעונאי <label id="sfaKimonai"></label> ש"ח</div>
+				</div>
+				</div>
+				<div class='col-4 shita ashkenaz'>
+					<div class="shita-inner">
+					<h5>שיטת ארצות אשכנז 75 גרם</h5>
+					<h5> <label id="ashTotal"></label> ש"ח</h5>
+						<div>
+							מחיר הכסף <label id="ash"></label> ש"ח
+
+						</div>
+						<div> תוספת 17% מע&quot;מ <label id="ashMaam"></label> ש"ח</div>
+						<div>תוספת מחיר קמעונאי <label id="ashKimonai"></label> ש"ח</div>
+				</div>
+				</div>
+			
+
+	</div>
+	
+			
+<div class='row main'>
+	<h1 class='gold'>שיעור פרוטה הנהוג</h1>
+	<div class='col-6 shita'><div class="shita-inner">
+	<h3>שיעור פרוטה</h3>
+	<h2><label id="pruta"></label>&nbsp;אגורות</h2>
+	</div></div>
+	<div class='col-6 shita'><div class="shita-inner">
+	<h3>שיעור פרוטה לשיעור המדוקדק</h3>
+	<h2><label id="meducdac"></label>&nbsp;אגורות</h2>
+	</div></div>
+			
+	</div>
+	<div class="row main">
+	<h1 class="gold">שיעור מחצית השקל</h1>
+	<div class="col-12"><div class="shita-inner">
+	<h3>שיעור מחצית השקל הוא 10% מפדיון הבן</h3>
+	<p>(פדיון הבן הוא 5 שקלים, ומחצית השקל הוא 10% ממנו)</p>
+	<h2><label id="todayTotalMachazit"></label>&nbsp;ש"ח</h2>
+	</div></div>
+	
+			
+	</div>
+
+			
+	<div class='row'>		
+		<p>למאמרים ושיעורים של הרב מרגולין לחץ <a href="/index2.html">כאן</a></p>
+	
+	</div>
+		<div class='row' style="display: none;">
+			<label id="silverRateInNIS"></label>
+
+			<label id="maam"></label>
+			<label id="kimonai"></label>
+			<label id="total1"></label>
+
+			<label id="meducdac"></label>
+			<label id="meducdacmaam"></label>
+			<label id="meducdackimonai"></label>
+			<label id="meducdacTotal"></label>
+
+
+
+
+
+
+
+
+		</div>
+		<script>
+
+			var silverRate;
+			var NISRate;
+			var ounce;
+			
+			var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+ var today = new Date();
+			  var dd = String(today.getDate()).padStart(2, '0');
+		      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			  var yyyy = today.getFullYear();
+			   var link='https://www.hebcal.com/converter?cfg=json&gy='+yyyy+'&gm='+mm+'&gd='+dd+'&g2h=1'
+
+getJSON(link,
+function(err, data) {
+	var result=	new Date().toJSON().slice(0,10);
+			
+  if (err !== null) {
+   
+  } else {
+	  if(data!==null&&data.hebrew!==undefined)
+		  result=data.hebrew;
+   
+  }
+  	document.getElementById('currentDate').innerHTML = result;
+			
+});
+
+			connect();
+
+
+
+			function calc() {
+
+				NISRate = document.getElementById('NIS').innerHTML;
+				silverRate = document.getElementById("usdRate").innerHTML;
+				ounce = NISRate * silverRate;
+				document.getElementById('silverRateInNIS').innerHTML = ounce.toFixed(2);
+				var gram = ounce / 31.1035;
+				document.getElementById('silverGrams').innerHTML = gram.toFixed(2);
+				var pruta = ounce / 12.44;
+				document.getElementById('pruta').innerHTML = pruta.toFixed(3);
+				var maam = pruta * 0.17;
+				document.getElementById('maam').innerHTML = maam.toFixed(2);
+				var kimonai = pruta * 0.21;
+				document.getElementById('kimonai').innerHTML = kimonai.toFixed(2);
+
+				var total1 = pruta + maam + kimonai;
+
+				document.getElementById('total1').innerHTML = total1.toFixed(2);
+
+
+
+				//meducdac
+
+				var meducdac = ounce / 13.995;
+				var meducdacmaam = meducdac * 0.17;
+				var meducdackimonai = meducdac * 0.21;
+				var meducdacTotal = meducdac + meducdacmaam + meducdackimonai;
+
+				document.getElementById('meducdac').innerHTML = meducdac.toFixed(3);
+				document.getElementById('meducdacmaam').innerHTML = meducdacmaam.toFixed(2);
+				document.getElementById('meducdackimonai').innerHTML = meducdackimonai.toFixed(2);
+				document.getElementById('meducdacTotal').innerHTML = meducdacTotal.toFixed(2);
+
+
+				//adhkenaz-->
+				var ash = gram * 75;
+				var ashMaam = ash * 0.17;
+				var ashKimonai = ash * 0.21;
+				var ashTotal = ash + ashMaam + ashKimonai;
+				document.getElementById('ash').innerHTML = ash.toFixed(2);
+				document.getElementById('ashMaam').innerHTML = ashMaam.toFixed(2);
+				document.getElementById('ashKimonai').innerHTML = ashKimonai.toFixed(2);
+				document.getElementById('ashTotal').innerHTML = ashTotal.toFixed(2);
+
+
+
+
+				//sfarad-->
+				var sfa = gram * 85;
+				var sfaMaam = sfa * 0.17;
+				var sfaKimonai = sfa * 0.21;
+				var sfaTotal = sfa + sfaMaam + sfaKimonai;
+				document.getElementById('sfa').innerHTML = sfa.toFixed(2);
+				document.getElementById('sfaMaam').innerHTML = sfaMaam.toFixed(2);
+				document.getElementById('sfaKimonai').innerHTML = sfaKimonai.toFixed(2);
+				document.getElementById('sfaTotal').innerHTML = sfaTotal.toFixed(2);
+
+				//nae-->
+				var nae = gram * 96;
+				var naeMaam = nae * 0.17;
+				var naeKimonai = nae * 0.21;
+				var naeTotal = nae + naeMaam + naeKimonai;
+
+				document.getElementById('nae').innerHTML = nae.toFixed(2);
+				document.getElementById('naeMaam').innerHTML = naeMaam.toFixed(2);
+				document.getElementById('naeKimonai').innerHTML = naeKimonai.toFixed(2);
+				document.getElementById('naeTotal').innerHTML = naeTotal.toFixed(2);
+
+				//today-->
+				var today = gram * 100;
+				var todayMaam = today * 0.17;
+				var todayKimonai = today * 0.21;
+				var todayTotal = today + todayMaam + todayKimonai;
+
+				document.getElementById('today').innerHTML = today.toFixed(2);
+				document.getElementById('todayMaam').innerHTML = todayMaam.toFixed(2);
+				document.getElementById('todayKimonai').innerHTML = todayKimonai.toFixed(2);
+				document.getElementById('todayTotal').innerHTML = todayTotal.toFixed(2);
+				document.getElementById('todayTotalMachazit').innerHTML = (todayTotal*0.1).toFixed(2);
+				
+				
+				
+				
+				
+			 
+			  
+
+
+
+
+
+
+
+
+
+			}
+
+			function connectTemp() {
+
+				silverRate = 28.14;
+				document.getElementById("usdRate").innerText = silverRate;
+				NISRate = 3.27;
+				document.getElementById('NIS').innerText = NISRate;
+				calc();
+			}
+			function connect() {
+				// document.getElementById('loading').hidden = false;
+				var myHeaders = new Headers();
+				//myHeaders.append("x-access-token", "goldapi-1f8bwhukig1tgau-io");
+				myHeaders.append("x-access-token", "goldapi-1fi818l13zb5qj-io");
+				myHeaders.append("Content-Type", "application/json");
+
+				var requestOptions = {
+					method: 'GET',
+					headers: myHeaders,
+					redirect: 'follow'
+				};
+				fetch("https://www.goldapi.io/api/XAG/USD", requestOptions)
+					.then(response => response.text())
+					.then(result => {
+						
+						console.log(result);
+						silverRate = JSON.parse(result).high_price;
+						document.getElementById("usdRate").innerHTML = silverRate.toFixed(2);;
+						var request2 = new XMLHttpRequest()
+						request2.open('GET', 'https://www.floatrates.com/daily/usd.json', true)
+						request2.onload = function () {
+							console.log(this.responses);
+							var data2 = JSON.parse(this.response)
+							console.log(data2);
+							NISRate = data2.ils.rate;
+							console.log(NISRate);
+							document.getElementById('NIS').innerHTML = NISRate.toFixed(2);;
+							//  document.getElementById('loading').hide();
+							calc();
+
+
+						}
+
+						request2.send()
+
+
+					}
+					)
+					.catch(error => console.log('error', error));
+			}
+
+		</script>
+		
+</body>
+
+</html>
